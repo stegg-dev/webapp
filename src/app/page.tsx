@@ -12,8 +12,8 @@ export default function Home() {
           priority
           className="rounded-lg fade-in app-icon shadow-lg transition-transform duration-300 hover:scale-110"
         />
-        <h1 className="font-tilt-neon mt-4 text-6xl fade-in">Stegg</h1>
-        <p className="text-xl mt-2 fade-in">Hide Any Message in Any Image</p>
+        <h1 className="font-tilt-neon mt-4 text-4xl fade-in">Stegg</h1>
+        <p className="text-xl mt-2 fade-in text-center">Hide Any Message in Any Image</p>
         <a href="https://apps.apple.com/ng/app/stegg/id1487379535" className="mt-4">
           <Image
             src="/app-store-badge.svg" 
