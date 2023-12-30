@@ -8,20 +8,32 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 33, 33, 33; 
+    --background-end-rgb: 33, 33, 33;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgba(var(--background-start-rgb), 0.85), /* You can adjust the alpha value for transparency */
+      rgba(var(--background-end-rgb), 1)
+    ),
+    rgb(var(--background-start-rgb)); /* This is the fallback color if the gradient is not applied */
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
