@@ -4,7 +4,10 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="900.000000pt" height="900.000000pt" viewBox="0 0 900.000000 900.000000"
  preserveAspectRatio="xMidYMid meet">
- <rect width="90%" height="100%" fill="#ffffff" rx="275" ry="275" />
+   <rect width="100%" height="100%" fill="#006c3b" rx="0" ry="0" />
+
+ <rect width="100%" height="100%" fill="#ffffff" rx="275" ry="275" />
+
 <metadata>
 Created by potrace 1.10, written by Peter Selinger 2001-2011
 </metadata>

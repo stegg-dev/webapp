@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import AppStoreDownloadButtons from './components/home/app-store-download-buttons';
 
 export default function Home() {
   return (
@@ -14,8 +13,17 @@ export default function Home() {
           className="rounded-lg fade-in app-icon shadow-lg transition-transform duration-300 hover:scale-110"
         />
         <h1 className="font-tilt-neon mt-4 text-6xl fade-in">Stegg</h1>
-        <p className="text-xl mt-2 fade-in">Hide Any Message in Any Image</p> 
-        <AppStoreDownloadButtons/>
+        <p className="text-xl mt-2 fade-in">Hide Any Message in Any Image</p>
+        <a href="https://apps.apple.com/ng/app/stegg/id1487379535" className="mt-4">
+          <Image
+            src="/app-store-badge.svg" 
+            alt="Download on the App Store"
+            width={200} 
+            height={50} 
+            priority
+            className='fade-in transition-transform duration-300 hover:scale-110'
+          />
+        </a>
       </main>
     </>
   );
