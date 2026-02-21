@@ -1,18 +1,33 @@
 import Link from 'next/link';
-import React from 'react';
+import Image from 'next/image';
 
-const NotFound: React.FC = () => {
+export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-10" data-testid="not-found">
-      <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
-      <p className="text-xl font-medium text-gray-600 mb-8">The page you are looking for does not exist.</p>
-      <Link href="/">
-        <span className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+    <>
+      <div className="bg-pattern" />
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6">
+        <Image
+          src="/stegg-dino-white.png"
+          alt="Stegg"
+          width={80}
+          height={80}
+          className="opacity-30 mb-8"
+        />
+        <h1 className="font-heading text-8xl font-black text-white/10 mb-2">404</h1>
+        <p className="font-heading text-xl font-semibold text-white mb-3">
+          Page Not Found
+        </p>
+        <p className="text-white/40 font-body text-sm mb-8 text-center max-w-sm">
+          This message is hidden a bit too well. The page you&apos;re looking for doesn&apos;t exist.
+        </p>
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 bg-stegg-accent hover:bg-stegg-light text-stegg-dark font-heading font-bold text-sm px-6 py-3 rounded-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
           Go Home
-        </span>
-      </Link>
-    </div>
+        </Link>
+      </main>
+    </>
   );
-};
-
-export default NotFound;
+}

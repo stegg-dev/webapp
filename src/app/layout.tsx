@@ -1,12 +1,26 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+})
 
 export const metadata: Metadata = {
-  title: 'Stegg',
-  description: 'Hide Any Message in Any Image',
+  title: 'Stegg — Hide Secret Messages in Images',
+  description: 'Stegg uses steganography to hide secret messages inside ordinary images. Your secrets stay hidden in plain sight. Available on iOS.',
+  keywords: ['steganography', 'hide messages', 'secret messages', 'image encryption', 'iOS app', 'privacy'],
+  openGraph: {
+    title: 'Stegg — Secret Messages. Hidden in Plain Sight.',
+    description: 'Hide any message in any image with Stegg. Steganography made simple.',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
@@ -15,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>
