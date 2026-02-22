@@ -14,6 +14,10 @@
   scroll-behavior: smooth;
 }
 
+html {
+  background-color: #0D3B2E;
+}
+
 body {
   color: #ffffff;
   background: linear-gradient(135deg, #0D3B2E 0%, #133D30 50%, #1A5C45 100%);
