@@ -1,98 +1,68 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
+const links = [
+  { href: '/#how-it-works', label: 'How it works' },
+  { href: '/#deep-search', label: 'Deep Search' },
+  { href: '/#pro', label: 'Stegg Pro' },
+  { href: '/privacy-policy', label: 'Privacy' },
+];
+
 export default function NavBar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-6xl px-6 py-4">
-        <div className="flex items-center justify-between rounded-2xl bg-stegg-dark/80 backdrop-blur-xl border border-white/[0.08] px-6 py-3 shadow-lg">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src="/stegg-dino-white.png"
-              alt="Stegg"
-              width={32}
-              height={32}
-              className="transition-transform duration-300 group-hover:scale-110"
-            />
-            <span className="font-heading text-xl font-bold tracking-[4px] text-white">
-              STEGG
-            </span>
-          </Link>
-
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/#features" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors">
-              Features
-            </Link>
-            <Link href="/#how-it-works" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors">
-              How It Works
-            </Link>
-            <Link href="/faq" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors">
-              FAQ
-            </Link>
-            <Link href="/privacy-policy" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors">
-              Privacy
-            </Link>
-            <a
-              href="https://apps.apple.com/ng/app/stegg/id1487379535"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-2 inline-flex items-center gap-2 bg-stegg-accent hover:bg-stegg-light text-stegg-dark font-heading font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(46,204,113,0.3)]"
-            >
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              Download
-            </a>
+    <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+      <div className="nav-shell mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-5">
+        <Link href="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+          <Image src="/stegg-icon-dark.png" alt="Stegg" width={38} height={38} className="rounded-xl shadow-lg" priority />
+          <div className="leading-none">
+            <span className="block font-heading text-lg font-black tracking-[0.28em] text-white">STEGG</span>
+            <span className="mt-1 block text-[9px] font-bold tracking-[0.2em] text-white/35">BY RUNEWORKS</span>
           </div>
+        </Link>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-            )}
-          </button>
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} className="text-sm font-medium text-white/60 transition hover:text-white">
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/download" className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-[#082b22] transition hover:-translate-y-0.5 hover:bg-[#d8ffe9]">
+            Download
+          </Link>
         </div>
 
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-2 rounded-2xl bg-stegg-dark/95 backdrop-blur-xl border border-white/[0.08] p-6 shadow-lg animate-fade-in">
-            <div className="flex flex-col gap-4">
-              <Link href="/#features" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Features
-              </Link>
-              <Link href="/#how-it-works" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                How It Works
-              </Link>
-              <Link href="/faq" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                FAQ
-              </Link>
-              <Link href="/privacy-policy" className="text-sm font-medium text-white/70 hover:text-stegg-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Privacy Policy
-              </Link>
-              <a
-                href="https://apps.apple.com/ng/app/stegg/id1487379535"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-stegg-accent hover:bg-stegg-light text-stegg-dark font-heading font-bold text-sm px-5 py-3 rounded-xl transition-all"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Download on App Store
-              </a>
-            </div>
-          </div>
-        )}
+        <button
+          type="button"
+          className="rounded-full border border-white/10 p-2 text-white md:hidden"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-label="Toggle navigation"
+        >
+          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? 'M6 18 18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+          </svg>
+        </button>
       </div>
+
+      {open && (
+        <div className="nav-shell mx-auto mt-2 max-w-6xl p-4 md:hidden">
+          <div className="flex flex-col gap-1">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-white">
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/download" onClick={() => setOpen(false)} className="mt-2 rounded-xl bg-stegg-accent px-4 py-3 text-center text-sm font-bold text-[#082b22]">
+              Download Stegg
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

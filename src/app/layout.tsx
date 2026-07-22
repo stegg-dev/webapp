@@ -1,42 +1,44 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
-import './globals.css'
+import type { Metadata, Viewport } from 'next';
+import { Inter, Space_Grotesk } from 'next/font/google';
+import './globals.css';
+import { SITE_URL } from './site-config';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-})
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 
 export const viewport: Viewport = {
   viewportFit: 'cover',
-}
+  themeColor: '#061c17',
+};
 
 export const metadata: Metadata = {
-  title: 'Stegg — Hide Secret Messages in Images',
-  description: 'Stegg uses steganography to hide secret messages inside ordinary images. Your secrets stay hidden in plain sight. Available on iOS.',
-  keywords: ['steganography', 'hide messages', 'secret messages', 'image encryption', 'iOS app', 'privacy'],
-  openGraph: {
-    title: 'Stegg — Secret Messages. Hidden in Plain Sight.',
-    description: 'Hide any message in any image with Stegg. Steganography made simple.',
-    type: 'website',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Stegg — Hide Secret Messages in Photos',
+    template: '%s — Stegg',
   },
-}
+  description: 'Hide secret messages and photos inside ordinary images. Private on-device processing, screenshot recovery, and a one-time Pro upgrade.',
+  keywords: ['steganography', 'hide secret messages', 'hide photos', 'private messaging', 'screenshot recovery', 'offline privacy'],
+  applicationName: 'Stegg',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Stegg — A secret can look like any other photo.',
+    description: 'Hide messages and photos inside ordinary images. Everything is processed on your device.',
+    type: 'website',
+    url: SITE_URL,
+    siteName: 'Stegg',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Stegg — Hidden in plain sight.',
+    description: 'Private, on-device steganography for iPhone and Android.',
+  },
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className={`${inter.className} antialiased`}>
-        {children}
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
-  )
+  );
 }

@@ -1,157 +1,79 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import NavBar from '../components/nav-bar';
+import SiteFooter from '../components/site-footer';
+import { SUPPORT_EMAIL } from '../site-config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Stegg',
-  description: 'Privacy Policy for the Stegg steganography app',
+  title: 'Privacy Policy',
+  description: 'How Stegg keeps image and message processing private and on your device.',
+  alternates: { canonical: '/privacy-policy' },
 };
 
-function PolicySection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="mb-10">
-      <h2 className="font-heading text-xl font-bold text-white mb-4">{title}</h2>
-      <div className="text-white/70 font-body text-sm leading-relaxed space-y-3">
-        {children}
-      </div>
-    </div>
-  );
-}
-
 export default function PrivacyPolicyPage() {
-  const lastUpdated = 'February 21, 2026';
-
   return (
     <>
-      <div className="bg-pattern" />
+      <div className="ambient-grid" />
       <NavBar />
+      <main className="relative z-10 px-6 pb-24 pt-36">
+        <header className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="section-kicker">PRIVATE BY DESIGN</p>
+          <h1 className="mt-3 font-heading text-4xl font-black tracking-tight sm:text-6xl">Privacy Policy</h1>
+          <p className="mt-4 text-sm text-white/40">Last updated: July 22, 2026</p>
+        </header>
 
-      <main className="relative z-10 min-h-screen pt-32 pb-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12 opacity-0 animate-fade-in">
-            <p className="font-heading text-sm font-semibold tracking-[3px] text-stegg-accent uppercase mb-3">
-              Legal
-            </p>
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-4">
-              Privacy Policy
-            </h1>
-            <p className="text-white/40 font-body text-sm">
-              Last updated: {lastUpdated}
-            </p>
-          </div>
+        <article className="legal-card legal-copy mx-auto max-w-3xl p-7 sm:p-12">
+          <h2>The short version</h2>
+          <p>
+            Stegg does not upload your images, hidden messages, or passwords. Hiding, revealing, and Deep Search run on your device. Stegg has no account system, product analytics SDK, or advertising SDK.
+          </p>
 
-          {/* Content */}
-          <div className="glass-card p-8 sm:p-12 opacity-0 animate-fade-in delay-200">
-            <PolicySection title="General Information">
-              <p>
-                At Stegg, we respect your privacy and are committed to protecting it. 
-                Our app is designed with a privacy-first approach — we do not collect, use, store, 
-                or share any personal data from our users.
-              </p>
-              <p>
-                All steganography operations (encoding and decoding) happen entirely on your device. 
-                Your images and messages never leave your phone and are never transmitted to any server.
-              </p>
-            </PolicySection>
+          <h2>Images, messages, and passwords</h2>
+          <p>
+            Images you select, messages you hide or reveal, and passwords you enter are processed locally. Stegg does not operate a server that receives or stores this content. Unsaved working data is discarded when the relevant flow is closed.
+          </p>
 
-            <PolicySection title="Data Collection">
-              <p>
-                <strong className="text-white">Stegg does not collect:</strong>
-              </p>
-              <ul className="list-disc list-inside space-y-1.5 ml-2">
-                <li>Personal information (name, email, phone number)</li>
-                <li>Location data</li>
-                <li>Photos or images you process through the app</li>
-                <li>Messages or text you hide or extract</li>
-                <li>Usage analytics or behavioral data</li>
-                <li>Device identifiers for tracking purposes</li>
-              </ul>
-            </PolicySection>
+          <h2>Local app data</h2>
+          <p>
+            Settings, onboarding state, review and promotion eligibility counters, themes, and optional history records are stored on your device. Clearing history or uninstalling Stegg removes the corresponding local data, subject to normal device backup behavior controlled by Apple or Google.
+          </p>
 
-            <PolicySection title="Third-Party Services">
-              <p>
-                Stegg may display advertisements through Google AdMob for free-tier users. 
-                AdMob may collect certain data as described in{' '}
-                <a 
-                  href="https://policies.google.com/privacy" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-stegg-accent hover:text-stegg-light underline underline-offset-2 transition-colors"
-                >
-                  Google&apos;s Privacy Policy
-                </a>.
-                Premium users who upgrade to Stegg Pro do not see any advertisements.
-              </p>
-              <p>
-                In-app purchases are processed through Apple&apos;s App Store, which is subject to{' '}
-                <a 
-                  href="https://www.apple.com/legal/privacy/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-stegg-accent hover:text-stegg-light underline underline-offset-2 transition-colors"
-                >
-                  Apple&apos;s Privacy Policy
-                </a>.
-              </p>
-            </PolicySection>
+          <h2>No product analytics or advertising</h2>
+          <p>
+            Stegg does not transmit session activity, feature usage, encode or decode outcomes, Deep Search activity, sharing behavior, paywall activity, or review-prompt activity. Stegg contains no third-party advertising SDK and does not sell personal data.
+          </p>
 
-            <PolicySection title="On-Device Processing">
-              <p>
-                All image encoding and decoding operations are performed locally on your device. 
-                Stegg does not use cloud processing, remote servers, or any form of network 
-                communication to process your images or messages. Your data stays on your device at all times.
-              </p>
-            </PolicySection>
+          <h2>Purchases</h2>
+          <p>
+            Stegg Pro purchases are processed by the Apple App Store or Google Play. Those stores handle your payment information; Stegg never receives your full card or bank details.
+          </p>
+          <p>
+            Stegg uses RevenueCat to retrieve available purchase offerings and determine whether the anonymous app installation has an active Pro entitlement. RevenueCat and the applicable store may process an app-generated identifier, transaction status, product identifier, receipt or purchase token, and related diagnostic information needed to provide and restore purchases. They do not receive the images, messages, or passwords you process in Stegg.
+          </p>
+          <p>
+            Learn more in the <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>, and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
+          </p>
 
-            <PolicySection title="Future Updates">
-              <p>
-                Should we decide to collect any data in the future, this privacy policy will be 
-                updated accordingly with clear notice provided to users. We advise users to review 
-                this page periodically for any changes. Changes to this privacy policy are effective 
-                when posted on this page.
-              </p>
-            </PolicySection>
+          <h2>Native store reviews</h2>
+          <p>
+            When Stegg requests a rating, the App Store or Google Play controls whether the native review prompt appears and handles the rating. Stegg records only local timing and eligibility information so it does not ask too often.
+          </p>
 
-            <PolicySection title="Contact Us">
-              <p>
-                If you have any questions about Stegg or this privacy policy, please contact us at{' '}
-                <a 
-                  href="mailto:support@runeworks.io" 
-                  className="text-stegg-accent hover:text-stegg-light underline underline-offset-2 transition-colors"
-                >
-                  support@runeworks.io
-                </a>.
-              </p>
-            </PolicySection>
-          </div>
+          <h2>Crash and platform diagnostics</h2>
+          <p>
+            Apple or Google may provide developers with aggregated or de-identified crash and performance diagnostics according to your device and store settings. Stegg does not intentionally include images, hidden messages, or passwords in crash reports.
+          </p>
 
-          {/* Back to home */}
-          <div className="text-center mt-10 opacity-0 animate-fade-in delay-300">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-white/40 hover:text-stegg-accent font-body text-sm transition-colors"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-              Back to Home
-            </Link>
-          </div>
-        </div>
+          <h2>Children</h2>
+          <p>Stegg is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
 
-        {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-white/[0.06]">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <Image src="/stegg-dino-white.png" alt="Stegg" width={20} height={20} className="opacity-40" />
-              <span className="font-heading text-xs font-semibold tracking-[3px] text-white/30">STEGG</span>
-            </div>
-            <p className="text-xs text-white/20 font-body">
-              &copy; {new Date().getFullYear()} RUNEWORKS LLC. All rights reserved.
-            </p>
-          </div>
-        </footer>
+          <h2>Changes</h2>
+          <p>We may update this policy as Stegg changes. The date above identifies the latest version.</p>
+
+          <h2>Contact</h2>
+          <p>Questions about privacy can be sent to RUNEWORKS LLC at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+        </article>
       </main>
+      <SiteFooter />
     </>
   );
 }
