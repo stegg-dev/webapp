@@ -23,6 +23,7 @@ export default function SiteFooter() {
             <Link href="/faq">FAQ</Link>
             <Link href="/support">Support</Link>
             <Link href="/privacy-policy">Privacy</Link>
+            <Link href="/data-deletion">Data deletion</Link>
             <Link href="/terms">Terms</Link>
             <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
           </nav>

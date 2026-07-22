@@ -35,7 +35,7 @@ export default function StoreButtons({ compact = false }: { compact?: boolean })
           <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.6 9.5 19 7.1a.5.5 0 0 0-.9-.5L16.7 9a8.2 8.2 0 0 0-9.4 0L5.9 6.6a.5.5 0 0 0-.9.5l1.4 2.4A7.3 7.3 0 0 0 3 15.6h18a7.3 7.3 0 0 0-3.4-6.1ZM8 13.1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
           </svg>
-          Android 2.2 — coming soon
+          Android — coming soon
         </Link>
       )}
     </div>

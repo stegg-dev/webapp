@@ -74,6 +74,11 @@ export default function PrivacyPolicyPage() {
           <h2>Changes</h2>
           <p>We may update this policy as Stegg changes. The date above identifies the latest version.</p>
 
+          <h2>Deleting data</h2>
+          <p>
+            See the <a href="/data-deletion">Stegg data deletion page</a> for instructions to remove local app data or request deletion of anonymous purchase-service data.
+          </p>
+
           <h2>Contact</h2>
           <p>Questions about privacy can be sent to RUNEWORKS LLC at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
         </article>

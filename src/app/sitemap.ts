@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { SITE_URL } from './site-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ['', '/download', '/faq', '/privacy-policy', '/support', '/terms'].map((path) => ({
+  return ['', '/download', '/faq', '/privacy-policy', '/data-deletion', '/support', '/terms'].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
     changeFrequency: path === '' ? 'weekly' : 'monthly',

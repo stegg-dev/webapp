@@ -119,7 +119,7 @@ export default function Home() {
                 </p>
                 <div className="mt-7 flex items-center gap-3 text-sm font-semibold text-stegg-accent">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-stegg-accent/15">✓</span>
-                  Processed locally on iPhone and Android
+                  Processed locally on your device
                 </div>
               </div>
               <div className="comparison-image">

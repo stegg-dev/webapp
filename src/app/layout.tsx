@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Stegg — Hidden in plain sight.',
-    description: 'Private, on-device steganography for iPhone and Android.',
+    description: 'Private, on-device steganography for iPhone. Android coming soon.',
   },
 };
 
