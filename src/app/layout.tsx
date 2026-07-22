@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Stegg',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Stegg — Hidden in plain sight.',
     description: 'Private, on-device steganography for iPhone and Android.',
   },

@@ -42,6 +42,11 @@ export default function PrivacyPolicyPage() {
             Stegg does not transmit session activity, feature usage, encode or decode outcomes, Deep Search activity, sharing behavior, paywall activity, or review-prompt activity. Stegg contains no third-party advertising SDK and does not sell personal data.
           </p>
 
+          <h2>The Stegg website</h2>
+          <p>
+            When you visit stegg.io, the hosting infrastructure necessarily receives standard request information—such as your IP address, browser or device information, requested URL, and timestamps—to deliver and secure the site. Stegg does not add product analytics, advertising trackers, or marketing cookies to the website. The site is hosted by Vercel, whose processing is described in the <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel Privacy Policy</a>.
+          </p>
+
           <h2>Purchases</h2>
           <p>
             Stegg Pro purchases are processed by the Apple App Store or Google Play. Those stores handle your payment information; Stegg never receives your full card or bank details.
