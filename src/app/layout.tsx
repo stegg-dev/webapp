@@ -27,11 +27,20 @@ export const metadata: Metadata = {
     type: 'website',
     url: SITE_URL,
     siteName: 'Stegg',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Stegg — hide secret messages and photos in plain sight',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Stegg — Hidden in plain sight.',
     description: 'Private, on-device steganography for iPhone. Android coming soon.',
+    images: ['/opengraph-image'],
   },
 };
 
