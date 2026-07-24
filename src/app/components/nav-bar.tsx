@@ -21,7 +21,7 @@ export default function NavBar() {
           <Image src="/stegg-icon-dark.png" alt="Stegg" width={38} height={38} className="rounded-xl shadow-lg" priority />
           <div className="leading-none">
             <span className="block font-heading text-lg font-black tracking-[0.28em] text-white">STEGG</span>
-            <span className="mt-1 block text-[9px] font-bold tracking-[0.2em] text-white/35">BY RUNEWORKS</span>
+            <span className="mt-1 block text-[9px] font-bold tracking-[0.16em] text-white/35">AN APP BY RUNEWORKS</span>
           </div>
         </Link>
 

@@ -14,16 +14,16 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Stegg — Hide Secret Messages in Photos',
+    default: 'Stegg — Hide Secret Messages & Photos Privately',
     template: '%s — Stegg',
   },
-  description: 'Hide secret messages and photos inside ordinary images. Private on-device processing, screenshot recovery, and a one-time Pro upgrade.',
+  description: 'Hide secret messages and photos inside ordinary images with private, on-device steganography. Free for iPhone, with Android coming soon.',
   keywords: ['steganography', 'hide secret messages', 'hide photos', 'private messaging', 'screenshot recovery', 'offline privacy'],
   applicationName: 'Stegg',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Stegg — A secret can look like any other photo.',
-    description: 'Hide messages and photos inside ordinary images. Everything is processed on your device.',
+    title: 'Stegg — Hide Secrets in Plain Sight',
+    description: 'Hide messages and photos inside ordinary images. No account, no cloud processing—everything stays on your device.',
     type: 'website',
     url: SITE_URL,
     siteName: 'Stegg',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stegg — Hidden in plain sight.',
-    description: 'Private, on-device steganography for iPhone. Android coming soon.',
+    title: 'Stegg — Hide Secrets in Plain Sight',
+    description: 'Hide messages and photos inside ordinary images. No account, no cloud processing—everything stays on your device.',
     images: ['/opengraph-image'],
   },
 };

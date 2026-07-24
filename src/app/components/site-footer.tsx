@@ -11,7 +11,7 @@ export default function SiteFooter() {
             <Image src="/stegg-icon-dark.png" alt="" width={38} height={38} className="rounded-xl" />
             <div>
               <p className="font-heading font-bold tracking-[0.28em] text-white">STEGG</p>
-              <p className="text-xs font-semibold tracking-[0.18em] text-white/40">A SOFTWARE BY RUNEWORKS</p>
+              <p className="text-xs font-semibold tracking-[0.18em] text-white/40">AN APP BY RUNEWORKS</p>
             </div>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-white/45">

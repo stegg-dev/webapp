@@ -43,7 +43,7 @@ export default function Home() {
         <section className="hero-section px-6 pb-24 pt-36 sm:pt-44">
           <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1.03fr_0.97fr]">
             <div className="relative z-10">
-              <div className="eyebrow mb-7">PRIVATE BY DESIGN · SOFTWARE BY RUNEWORKS</div>
+              <div className="eyebrow mb-7">PRIVATE BY DESIGN · AN APP BY RUNEWORKS</div>
               <h1 className="max-w-4xl font-heading text-5xl font-black leading-[0.96] tracking-[-0.055em] text-white sm:text-7xl lg:text-[5.6rem]">
                 A secret can look like
                 <span className="hero-emphasis"> any other photo.</span>
@@ -198,7 +198,7 @@ export default function Home() {
         <section className="px-6 pb-28">
           <div className="download-stage mx-auto max-w-5xl text-center">
             <Image src="/stegg-icon-dark.png" alt="Stegg" width={92} height={92} className="mx-auto rounded-[1.8rem] shadow-2xl" />
-            <p className="section-kicker mt-8">A SOFTWARE BY RUNEWORKS</p>
+            <p className="section-kicker mt-8">AN APP BY RUNEWORKS</p>
             <h2 className="mx-auto mt-3 max-w-3xl font-heading text-4xl font-black tracking-tight text-white sm:text-6xl">Hide your first secret. Keep it off the cloud.</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/55">Free core hiding and revealing. Private on-device processing. Stegg Pro is a one-time upgrade.</p>
             <div className="mt-9 flex justify-center"><StoreButtons /></div>
