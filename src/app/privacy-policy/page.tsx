@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
         <header className="mx-auto mb-12 max-w-3xl text-center">
           <p className="section-kicker">PRIVATE BY DESIGN</p>
           <h1 className="mt-3 font-heading text-4xl font-black tracking-tight sm:text-6xl">Privacy Policy</h1>
-          <p className="mt-4 text-sm text-white/40">Last updated: July 22, 2026</p>
+          <p className="mt-4 text-sm text-white/40">Last updated: July 24, 2026</p>
         </header>
 
         <article className="legal-card legal-copy mx-auto max-w-3xl p-7 sm:p-12">
@@ -30,6 +30,14 @@ export default function PrivacyPolicyPage() {
           <h2>Images, messages, and passwords</h2>
           <p>
             Images you select, messages you hide or reveal, and passwords you enter are processed locally. Stegg does not operate a server that receives or stores this content. Unsaved working data is discarded when the relevant flow is closed.
+          </p>
+
+          <h2>On-device content and reports</h2>
+          <p>
+            Because Stegg does not receive content processed locally in the app, RUNEWORKS cannot inspect, scan, moderate, decrypt, recover, or delete that content. You control what you create, save, and share.
+          </p>
+          <p>
+            If you contact support or report suspected misuse, do not attach or forward private passwords, private content, or suspected illegal or exploitative material. Send only the non-sensitive details needed for us to understand the report.
           </p>
 
           <h2>Local app data</h2>
