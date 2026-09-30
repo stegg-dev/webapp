@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'Stegg — Hide Secret Messages & Photos Privately',
     template: '%s — Stegg',
   },
-  description: 'Hide secret messages and photos inside ordinary images with private, on-device steganography. Free for iPhone, with Android coming soon.',
+  description: 'Hide secret messages and photos inside ordinary images with private, on-device steganography. Free for iPhone and Android.',
   keywords: ['steganography', 'hide secret messages', 'hide photos', 'private messaging', 'screenshot recovery', 'offline privacy'],
   applicationName: 'Stegg',
   alternates: { canonical: '/' },

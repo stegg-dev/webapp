@@ -4,7 +4,5 @@ export const PLAY_STORE_URL =
 export const SUPPORT_EMAIL = 'hello@runeworks.io';
 export const SITE_URL = 'https://stegg.io';
 
-// Switch this on after the first public Google Play release. Keeping the URL
-// here makes the launch change deliberate and prevents non-testers from being
-// sent to Play's "Item not found" page in the meantime.
-export const ANDROID_PUBLIC = false;
+// Stegg is publicly available on Google Play.
+export const ANDROID_PUBLIC = true;
