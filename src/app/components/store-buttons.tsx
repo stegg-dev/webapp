@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ANDROID_PUBLIC, APP_STORE_URL, PLAY_STORE_URL } from '../site-config';
 
 export default function StoreButtons({ compact = false }: { compact?: boolean }) {
@@ -24,15 +23,15 @@ export default function StoreButtons({ compact = false }: { compact?: boolean })
           href={PLAY_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className={`store-button store-button-secondary px-6 py-2.5 ${compact ? 'min-w-[13rem]' : 'min-w-[15rem]'}`}
+          className={`store-button store-button-secondary ${sizing}`}
         >
-          <Image
-            src="/google-play-badge.svg"
-            alt="Get it on Google Play"
-            width={239}
-            height={71}
-            className="h-9 w-auto"
-          />
+          <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path fill="#4285f4" d="M3 2.5V21.5L12.5 12Z" />
+            <path fill="#34a853" d="M3 2.5L16.5 9.25L12.5 12Z" />
+            <path fill="#ea4335" d="M3 21.5L12.5 12L16.5 14.75Z" />
+            <path fill="#fbbc04" d="M12.5 12L16.5 9.25L22 12L16.5 14.75Z" />
+          </svg>
+          Get it on Google Play
         </a>
       ) : (
         <Link href="/download" className={`store-button store-button-secondary ${sizing}`}>
