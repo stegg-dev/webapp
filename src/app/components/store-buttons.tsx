@@ -30,7 +30,7 @@ export default function StoreButtons({ compact = false }: { compact?: boolean })
           <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
             <defs>
               <clipPath id={playClipId}>
-                <path d="M3 3.4Q3 2.5 3.8 2.9L21.2 11.6Q22 12 21.2 12.4L3.8 21.1Q3 21.5 3 20.6Z" />
+                <path d="M3 5.2C3 3.1 3.8 2.9 5.5 3.75L19.5 10.75C21.2 11.6 21.2 12.4 19.5 13.25L5.5 20.25C3.8 21.1 3 20.9 3 18.8Z" />
               </clipPath>
             </defs>
             <g clipPath={`url(#${playClipId})`}>
