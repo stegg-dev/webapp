@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { useId } from 'react';
 import { ANDROID_PUBLIC, APP_STORE_URL, PLAY_STORE_URL } from '../site-config';
 
 export default function StoreButtons({ compact = false }: { compact?: boolean }) {
   const sizing = compact ? 'px-5 py-3 text-sm' : 'px-6 py-4 text-base';
+  const playClipId = useId();
 
   return (
     <div className="flex flex-col sm:flex-row gap-3">
@@ -26,10 +28,17 @@ export default function StoreButtons({ compact = false }: { compact?: boolean })
           className={`store-button store-button-secondary ${sizing}`}
         >
           <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-            <path fill="#4285f4" d="M3 2.5V21.5L12.5 12Z" />
-            <path fill="#34a853" d="M3 2.5L16.5 9.25L12.5 12Z" />
-            <path fill="#ea4335" d="M3 21.5L12.5 12L16.5 14.75Z" />
-            <path fill="#fbbc04" d="M12.5 12L16.5 9.25L22 12L16.5 14.75Z" />
+            <defs>
+              <clipPath id={playClipId}>
+                <path d="M3 3.4Q3 2.5 3.8 2.9L21.2 11.6Q22 12 21.2 12.4L3.8 21.1Q3 21.5 3 20.6Z" />
+              </clipPath>
+            </defs>
+            <g clipPath={`url(#${playClipId})`}>
+              <path fill="#4285f4" d="M3 2.5V21.5L12.5 12Z" />
+              <path fill="#34a853" d="M3 2.5L16.5 9.25L12.5 12Z" />
+              <path fill="#ea4335" d="M3 21.5L12.5 12L16.5 14.75Z" />
+              <path fill="#fbbc04" d="M12.5 12L16.5 9.25L22 12L16.5 14.75Z" />
+            </g>
           </svg>
           Get it on Google Play
         </a>
